@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 import { CgProfile } from 'react-icons/cg'
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 function SideBar() {
     const [open, setOpen] = useState(false);
     const [selected, setSelcted] = useState('dashboard');
+    const {authUser}=useAuth()
+    const firstName = authUser.name?.split(" ")[0];
+    const firstLetter = firstName?.charAt(0);
+    const restOfName = firstName?.slice(1); 
     return (
         <>
             <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" onClick={() => setOpen(!open)} type="button" className="absolute top-0 inline-flex items-center p-2 mt-2 ms-3 text-sm  rounded-lg lg:hidden  focus:outline-none focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600">
@@ -20,12 +25,12 @@ function SideBar() {
                         <li className="mb-10 hidden lg:block">
                             <a href="#" className="flex items-center p-2 rounded-lg text-white group">
                                 <span className="self-center text-3xl font-semibold whitespace-nowrap">
-                                    <span className="text-4xl text-blue-500">S</span>ara
+                                    <span className="text-4xl text-blue-500 capitalize">{firstLetter}</span>{restOfName}
                                 </span>
                             </a>
                         </li>
                         <li>
-                            <Link to={'/dashboard'} onClick={()=>setSelcted('dashboard')} className={`flex items-center p-2 rounded-lg ${selected==='dashboard'?'text-blue-500':'text-white'} hover:text-blue-500 group`}>
+                            <Link to={'/dashboard'} onClick={() => setSelcted('dashboard')} className={`flex items-center p-2 rounded-lg ${selected === 'dashboard' ? 'text-blue-500' : 'text-white'} hover:text-blue-500 group`}>
                                 <svg className="w-5 h-5 transition duration-75" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
                                     <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
                                     <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
@@ -34,7 +39,7 @@ function SideBar() {
                             </Link>
                         </li>
                         <li>
-                            <Link to={'profile'} onClick={()=>setSelcted('profile')} className={`flex items-center p-2 rounded-lg ${selected==='profile'?'text-blue-500':'text-white'} hover:text-blue-500 group`}>
+                            <Link to={'profile'} onClick={() => setSelcted('profile')} className={`flex items-center p-2 rounded-lg ${selected === 'profile' ? 'text-blue-500' : 'text-white'} hover:text-blue-500 group`}>
                                 <svg className="w-5 h-5 group-hover:text-blue-500 transition duration-75" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
                                     <CgProfile />
                                 </svg>
