@@ -1,3 +1,10 @@
 @import "tailwindcss";
 
+*{
+    font-family: 'Inter', 'Roboto', 'Open Sans', sans-serif;
+}
+
+@theme{
+    --font-Courier: 'Courier New', Courier, monospace;
+}
 

@@ -1,4 +1,3 @@
-
 import Button from '../Reusable/Button'
 import Search from './Search'
 import Paginate from './Paginate'
@@ -21,6 +20,7 @@ function DataTable() {
             setDeleted(false)
         }, 2500);
     }
+    
     return (
         <>
             <div className='flex items-center justify-between py-5 text-left rtl:text-right text-gray-900'>
@@ -62,10 +62,10 @@ function DataTable() {
                                             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                                                 {user?.firstName + ' ' + user?.lastName}
                                             </th>
-                                            <td className="px-6 py-4">
+                                            <td className="px-6 py-4 whitespace-nowrap">
                                                 {user?.email}
                                             </td>
-                                            <td className="px-6 py-4">
+                                            <td className="px-6 py-4 whitespace-nowrap">
                                                 {user?.company?.name || user?.company}
                                             </td>
                                             <td className="px-6 py-4">

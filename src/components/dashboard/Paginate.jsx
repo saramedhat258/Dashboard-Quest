@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { useUsers } from '../../context/UsersContext';
 
 function Paginate() {
@@ -11,8 +11,6 @@ function Paginate() {
                         <button onClick={() => setPage(p)} className={`rounded-s-lg flex items-center justify-center sm:px-3 px-2 h-8 leading-tight text-gray-500  border border-gray-300  hover:text-gray-700 ${page === p ? 'bg-blue-500 text-white' : 'bg-white hover:bg-gray-100'} `}>{p}</button>
                     </li>
                 )}
-
-
             </ul>
         </nav>
 

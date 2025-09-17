@@ -11,13 +11,11 @@ export const UsersProvider = ({ children }) => {
     const [page, setPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState('');
 
-
     /* fetch all users, search, paginate */
     const fetchUsers = async (page = 1, searchTerm = '') => {
         try {
             const limit = 5;
             const skip = (page - 1) * limit;
-
             const url = searchTerm
                 ? `https://dummyjson.com/users/search?q=${searchTerm}&limit=${limit}&skip=${skip}`
                 : `https://dummyjson.com/users?limit=${limit}&skip=${skip}`;
@@ -33,7 +31,6 @@ export const UsersProvider = ({ children }) => {
             setError(err.message || "Something went wrong");
         }
     };
-
 
     /*add new user */
     const addUser = async (newUser) => {
@@ -68,7 +65,6 @@ export const UsersProvider = ({ children }) => {
                     body: JSON.stringify(updatedData)
                 })
                 const data = await res.json()
-
                 setUsers(prev =>
                     prev.map(user =>
                         user.id === id ? { ...user, ...data } : user

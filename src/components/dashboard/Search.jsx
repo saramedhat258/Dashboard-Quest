@@ -1,4 +1,3 @@
-import React from 'react'
 import { useUsers } from '../../context/UsersContext';
 
 function Search() {

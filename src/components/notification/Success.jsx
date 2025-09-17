@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function Success({ msg }) {
     const [close, setClose] = useState(false)

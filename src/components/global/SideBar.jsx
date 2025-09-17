@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { CgProfile } from 'react-icons/cg'
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
@@ -25,7 +25,7 @@ function SideBar() {
                         <li className="mb-10 hidden lg:block">
                             <a href="#" className="flex items-center p-2 rounded-lg text-white group">
                                 <span className="self-center text-3xl font-semibold whitespace-nowrap">
-                                    <span className="text-4xl text-blue-500 capitalize">{firstLetter}</span>{restOfName}
+                                    <span className="text-4xl text-blue-500 capitalize !font-Courier">{firstLetter}</span>{restOfName}
                                 </span>
                             </a>
                         </li>

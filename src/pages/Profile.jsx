@@ -33,14 +33,12 @@ function Profile() {
                         <Button btnName='Logout' className='bg-red-500 w-1/2' handleClick={handleClick} />
                     </div>
                 </form>
-
             </div>
-            {success&&
+
+            {success &&
                 <Sucsses msg="Logged out successfully" />
             }
-
         </>
-
     )
 }
 
