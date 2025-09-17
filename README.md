@@ -1,12 +1,65 @@
-# React + Vite
+# 👤 Responsive Users Dashboard Quest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+# Setup instructions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. Clone the Repository
+```bash
+git clone https://github.com/saramedhat258/Dashboard-Quest.git
+```
 
-## Expanding the ESLint configuration
+### 2. Install Dependencies
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 3. Run the Development Server
+```bash
+npm run dev
+```
+
+# ✨ Features
+
+1. Mock Authentication (login, logout), and protected routes.
+2. CRUD operations on users (Add, Update, Delete)
+3. Search users by name or email.
+4. Pagination: 5 users per page.
+5. Error and success notifications.
+6. Form validation.
+7. Simple UI using Tailwind CSS and Flowbite React used for UI components to save time.
+
+# API endpoints used
+
+### 1. Fetch all users with pagination
+```bash
+GET https://dummyjson.com/users?limit={limit}&skip={skip}
+```
+
+### 2. Search users
+```bash
+GET https://dummyjson.com/users/search?q={searchTerm}&limit={limit}&skip={skip}
+```
+
+### 3. Add user
+```bash
+POST https://dummyjson.com/users/add
+```
+
+### 4. Update user
+```bash
+PUT https://dummyjson.com/users/{id}
+```
+
+### 5. Delete user
+```bash
+DELETE https://dummyjson.com/users/{id}
+```
+
+# Important Notes:
+1. DummyJSON simulates add/update/delete. Changes are not persisted on the server, so i also use local state in React to show ui changes.
+2. Search and pagination only work with data comes from API.
+3. i use Flowbite React components to speed up UI development and maintain a clean design.
+
+
+
