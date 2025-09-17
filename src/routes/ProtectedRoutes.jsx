@@ -4,7 +4,7 @@ import { Outlet, Navigate } from "react-router-dom"
 function ProtectedRoutes() {
     const { authUser } = useAuth()
     if (!authUser.name) {
-        return <Navigate to='/Dashboard-Quest' />
+        return <Navigate to='/' replace />
     }
     return <Outlet />
 }
