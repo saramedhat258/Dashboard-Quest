@@ -1,6 +1,5 @@
-# 👤 Responsive Users Dashboard Quest
-
----
+# 👤 Responsive Users Dashboard Quest 
+🔗 [Live Demo](https://saramedhat258.github.io/Dashboard-Quest/)
 
 # Setup instructions
 
